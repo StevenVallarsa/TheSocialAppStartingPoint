@@ -10,4 +10,4 @@
 
 Create components first **THEN** create functionality
 
-## Crated Funcationality
+## Created Funcationality
