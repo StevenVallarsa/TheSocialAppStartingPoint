@@ -1,9 +1,11 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 import './App.css';
 import Login from './components/Login';
 import Header from './components/Header';
 import CreatePost from './components/CreatePost';
 import PostList from './components/PostList';
+
+const UserContext = createContext();
 
 function App() {
 

@@ -13,7 +13,8 @@ function CreatePost({ user, handleAddPost }) {
       content,
       image,
       user,
-      id: Date.now()
+      id: Date.now(),
+      date: dateTime.toLocaleString()
     }
 
     handleAddPost(post);
