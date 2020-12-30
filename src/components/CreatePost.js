@@ -10,9 +10,10 @@ function CreatePost({ user, handleAddPost }) {
     e.preventDefault();
     const dateTime = new Date();
     const post = {
-      content: content + " : " + dateTime,
+      content,
       image,
-      user
+      user,
+      id: Date.now()
     }
 
     handleAddPost(post);
