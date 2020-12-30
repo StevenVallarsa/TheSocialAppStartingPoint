@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
+import Post from './Post';
 
-function PostList({posts}) {
+function PostList({ posts, setPosts }) {
   
-  return (
-    <div>
-      {posts && posts.map(post => <p key={post.content}>{post.content}</p>)}
-    
-    </div>)
+  const deletePost = (content) => {
+    setPosts(posts.filter(post => post.content !== content));
+  }
+  
+  return posts.map((post, index) => <Post key={index} {...post} deletePost={deletePost} />
+        
+  )
 }
 
 export default PostList;

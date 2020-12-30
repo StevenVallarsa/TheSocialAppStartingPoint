@@ -21,23 +21,7 @@ function App() {
       <>
         <Header user={user} setUser={setUser} />
         <CreatePost user={user} setPosts={setPosts} posts={posts}/>
-        {/* <PostList posts={posts}/> */}
-        {posts.map((post, index) => (
-          <Fragment key={index}>
-            {post.image && (
-              <img
-                style={{ height: 100, width: 200, objectFit: "cover" }}
-                src={URL.createObjectURL(post.image)}
-                alt="Post cover"
-              />)}
-            <p>{post.content} <span class="owner"> — Posted By {user}</span></p>
-            <hr style={{ width: 500, marginRight: "85%", marginLeft: 25}} />
-              
-            
-          </Fragment>
-          
-        ))}
-          
+        <PostList posts={posts} setPosts={setPosts} />          
       </>)
   }
 }
