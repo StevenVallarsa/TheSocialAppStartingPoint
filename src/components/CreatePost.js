@@ -1,20 +1,21 @@
 import React, { useState, useRef } from 'react';
 
-function CreatePost({user, setPosts, posts}) {
+function CreatePost({ user, handleAddPost }) {
+  
   const [content, setContent] = useState('');
   const [image, setImage] = useState(null);
   const imageInputRef = useRef(null)
 
   const handleSubmit = e => {
     e.preventDefault();
+    const dateTime = new Date();
     const post = {
-      content,
+      content: content + " : " + dateTime,
       image,
       user
     }
-    const newPosts = [post, ...posts]
-    setPosts(newPosts);
-    setImage('');
+
+    handleAddPost(post);
     setContent('');
     imageInputRef.current.value = '';
   }
